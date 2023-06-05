@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>This is extra explanation for the code that i've used.</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="contain">
+    <h1>Explaining Code Cheat Sheet.</h1>
+
+    <p> - The code defines a function named (comparePoints) that takes an event object as a parameter.
+
+        - The function starts by preventing the default form submission behavior using (event.preventDefault()). This ensures that the form doesn't accidentally trigger a page reload, which was a problem I was having.
+        
+        It retrieves the player name and test points from the form by accessing the corresponding input elements in the HTML using their id attributes.
+        
+        - The code then uses the fetch function to retrieve the contents of a CSV file named player_data.csv which I used for the NunPy and Pandas hacks.
+        
+        The retrieved CSV data is then processed using PapaParse, which is a CSV parsing library that I found out about. The Papa.parse function is used to parse the data, with the header option set to true to treat the first row as the header row.
+        
+        The parsed CSV data is logged to the console using console.log(parsedData.data).
+        
+        - An empty object named players is created to store player names and their average points per game.
+        
+        - The code iterates through each row of the parsed CSV data using the forEach method. For each row, it extracts the player's name and average points per game, and stores them as key-value pairs in the players object.
+        
+        The players object is logged to the console using console.log(players).
+        
+        The code checks if the players object has a property corresponding to the player's name entered in the form. If it does, it retrieves the player's average points from the players object.
+        
+       -  It compares the testPoints with the player's average points using a ternary operator an operator that takes three operands and is used as a shortcut for an if-else statement. If the testPoints are greater than the player's average, the result variable is set to 'over', otherwise it is set to 'under'.
+        
+        The code updates the text content of an element with the id "result" in the HTML with a message that displays the player's name, the comparison result, the player's average, and a betting odds statement.
+        
+        If the player's name is not found in the players object, the code updates the text content of the "result" element with a message indicating that the player was not found in the data.
+        
+        If any error occurs during the fetch or parsing process, the error is logged to the console.
+        
+        The code attaches an event listener to the button with the id "compare-btn" to execute the comparePoints function when the button is clicked.
+        
+        Additionally, it attaches an event listener to the "DOMContentLoaded" event to ensure that the button event listener is added only after the DOM has been fully loaded.</p>
+  </div>
+
+  <!-- Add the button for functions.html -->
+<button id="function-btn" onclick="goToIndexPage()">Back</button>
+
+<script>
+  // Function to navigate to the functions.html page
+  function goToIndexPage() {
+    window.location.href = "/Javacheckout/index.html"
+  }
+</script>
